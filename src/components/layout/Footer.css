@@ -1,0 +1,21 @@
+footer {
+  background-color: white;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo img{
+  width: 200px;
+  height: auto;
+}
+
+.redes-sociales a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+

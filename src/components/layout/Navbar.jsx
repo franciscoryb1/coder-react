@@ -1,19 +1,28 @@
+import { Link } from "react-router-dom";
 import CartWidget from "../common/CartWidget";
-import "./navbar.css";
+import "./Navbar.css";
+
 
 export const Navbar = () => {
   return (
-    <div className="navbar">
-      <h1 className="navbar-title">Infinity Computacion</h1>
-      <ul className="navbar-categories">
-        <li>Televisores</li>
-        <li>Celulares</li>
-        <li>Notebooks</li>
-      </ul>
-      <div>
-        <h4>Carrito</h4>
-        <CartWidget />
-      </div>
-    </div>
+    <>
+      <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+          <div class="header-logo">
+            <Link to={"/"}>
+              <img src="https://res.cloudinary.com/dwjthfjls/image/upload/v1709079630/ranguni.png" />
+            </Link>
+          </div>
+
+          <nav class="header-navigation">
+            <Link to="/">Todas</Link>
+            <Link to="/category/camionetas">Camionetas</Link>
+            <Link to="/category/autos">Autos</Link>
+            <Link to="/category/motos">Motos</Link>
+            <CartWidget />
+          </nav>
+        </div>
+      </header>
+    </>
   );
 };
