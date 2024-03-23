@@ -6,14 +6,14 @@ import FacebookIcon from "../common/FacebookIcon";
 export const Footer = () => {
   return (
     <footer>
-      <div class="logo">
+      <div className="logo">
         <a href="/"><img
           src="https://res.cloudinary.com/dwjthfjls/image/upload/v1709079630/ranguni.png"
           alt=""
         /></a>
         
       </div>
-      <div class="redes-sociales">
+      <div className="redes-sociales">
         <InstagramLogo />
         <MapIcon />
         <FacebookIcon />

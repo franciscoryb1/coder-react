@@ -1,34 +1,32 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProduct } from "../../../productsMock";
 import { useParams, useNavigate } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
+import { CartContext } from "../../../context/CartContext";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
-  console.log(id);
 
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-//  const navigate = useNavigate()
+  const { addToCart } = useContext(CartContext);
+
+  //  const navigate = useNavigate()
 
   useEffect(() => {
     getProduct(+id).then((resp) => {
       setItem(resp);
       setIsLoading(false);
     });
-    
   }, [id]);
 
   const onAdd = (cantidad) => {
-   
     let infoProducto = {
       ...item,
-      quantity: cantidad
-    }
-    console.log(infoProducto)
-    // Quiero navegar al carrito 
-    // navigate("/cart")
+      quantity: cantidad,
+    };
+    addToCart(infoProducto);
   };
 
   return (

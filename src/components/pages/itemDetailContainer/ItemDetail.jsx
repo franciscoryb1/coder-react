@@ -4,31 +4,31 @@ export const ItemDetail = ({ item, onAdd }) => {
   console.log(item);
   return (
     <main>
-      <div class="card">
-        <div class="card__title">
-          <div class="icon">
+      <div className="card">
+        <div className="card__title">
+          <div className="icon">
             <a href="#">
-              <i class="fa fa-arrow-left"></i>
+              <i className="fa fa-arrow-left"></i>
             </a>
           </div>
         </div>
-        <div class="card__body">
-          <div class="half">
-            <div class="featured_text">
+        <div className="card__body">
+          <div className="half">
+            <div className="featured_text">
               <h1>{item.title}</h1>
-              <div class="description">
+              <div className="description">
                 <p>{item.description}</p>
               </div>
-              <p class="price">${item.price}</p>
-              <div class="action">
+              <p className="price">${item.price}</p>
+              <div className="action">
                 <button type="button">Add to cart</button>
               </div>
             </div>
-            <div class="image">
-              <img
-                src={item.img}
-                alt=""
-              />
+            <div className="image">
+              <img src={item.img} alt="" />
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <ItemCountContainer stock={item.stock} onAdd={onAdd} />
             </div>
           </div>
         </div>
